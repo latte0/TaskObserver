@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "dependencies": {
+    "http": "*",
+    "socket.io":"*",
+    "mysql":"*",
+    "slack-bot":"*",
+    "node-schedule":"*",
+    "request":"*",
+    "slack-node":"*",
+    "express":"*"
+  }
+}

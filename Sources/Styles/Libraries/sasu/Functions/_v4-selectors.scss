@@ -1,0 +1,49 @@
+// CSS V4 support
+
+
+// :any-link
+@mixin any-link($sltr) {
+    @if $sasu-v4-support {
+        #{$sltr}:any-link {
+            @content;
+        }
+    } @else {
+        #{$sltr}:link,
+        #{$sltr}:visited {
+            @content;
+        }
+    }
+}
+
+
+// :matches
+@mixin v4-matches($sltr, $matches...) {
+    @if $sasu-v4-support {
+        #{$sltr}:matches(#{$matches}) {
+            @content;
+        }
+    } @else {
+        @each $matches {
+            #{$sltr} #{$matches} {
+                @content;
+            }
+        }
+    }
+}
+
+
+
+// :not
+@mixin v4-not($sltr...) {
+    @if $sasu-v4-support {
+        #{$sltr}:not {
+            @content;
+        }
+    } @else {
+        @each #{$sltr} in {
+            #{$sltr}:not {
+                @content;
+            }
+        }
+    }
+}
